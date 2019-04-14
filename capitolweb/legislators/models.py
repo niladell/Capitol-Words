@@ -44,7 +44,7 @@ class Term(models.Model):
     type = models.CharField(max_length=3, choices=(('sen', "Senate"), ('rep', 'House')))
     start_date = models.DateField()
     end_date = models.DateField()
-    state = models.ForeignKey(State)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
     district = models.IntegerField(default=-1)
     election_class = models.CharField(max_length=1)
     state_rank = models.CharField(max_length=6, choices=(('junior', 'junior'), ('senior', 'Senior')))
